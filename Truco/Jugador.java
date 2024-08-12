@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Jugador {
     public ArrayList<Carta> mano;
     public String nombre;
+    public int puntosmano = 0;
+    public int puntospartida = 0;
+
 
     public Jugador(String nombre){
         this.nombre = nombre;

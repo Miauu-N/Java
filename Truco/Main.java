@@ -15,13 +15,7 @@ public class Main {
 
         Ronda ronda1 = new Ronda(Player1, Player2);
         
-        Baraja baraja = new Baraja();
-
-        Player1.agregarCartas(baraja.repartir());
-        System.out.println(Player1);
-
-        Player2.agregarCartas(baraja.repartir());
-        System.out.println(Player2);
+        darCartas(Player1, Player2);
 
         System.out.println(Player1.nombre +" elija su primera carta (0-2): ");
         ronda1.JugarRondaPrimera(scanner.nextInt());
@@ -34,13 +28,20 @@ public class Main {
         }
         else {
             System.out.println("Ganador de la ronda: " + ronda1.ganador.nombre);
+            ronda1.ganador.puntosmano += 1;
         }
         Player1.mano.clear();
         Player2.mano.clear();
 
         scanner.close();
     }
-    public static void darCartas(Jugador p1,Jugador p2){
+    public static void darCartas(Jugador Player1,Jugador Player2){
+        Baraja baraja = new Baraja();
 
+        Player1.agregarCartas(baraja.repartir());
+        System.out.println(Player1);
+
+        Player2.agregarCartas(baraja.repartir());
+        System.out.println(Player2);
     }
 }
